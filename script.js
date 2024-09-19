@@ -44,13 +44,12 @@ function moveViewToBoxes(boxes) {
 // Selects
 function selectBoxes(ids) {
   const boxes = document.querySelector('.section.large-section .large-boxes');
-  if (!boxes) return; // Check if boxes are found
 
-  // Removes Highlight + Colour
-  boxes.querySelectorAll('.box').forEach(box => {
-    const label = box.querySelector('label');
+  // Deselects All
+  boxes.querySelectorAll('.large-box').forEach(box => {
+    const label = box.closest('.large-box');
     const highlightStroke = label.querySelector('.highlight-stroke path');
-    if (label && highlightStroke) {
+    if (highlightStroke) {
       deselectLBox(label, highlightStroke);
     }
   });
