@@ -191,29 +191,36 @@ function addNewInput() {
 // When Info Clicked
 function showInfo(element, type) {
   let infoText = '';
+  
+  // Predefine info text based on the type
   switch(type) {
     case 'recording':
       infoText = 'Recording involves capturing your music in its rawest form, laying down each track with extreme precision. At 3507, you’ll have access to top-tier equipment and a creative environment that allows your music to impress, whether you’re a solo artist, band, or spoken word vocalist.';
       break;
     case 'mixing':
-      infoText = 'Mixing is where your track begins to take shape. All your individual elements are expertly blended to create a cohesive piece of music. This includes everything from adjusting levels, applying effects, and panning sounds to masterfully bring your piece to life.';
+      infoText = 'Mixing is where your track begins to take shape. All the individual elements are expertly blended to create a cohesive piece of music for you. This involves everything from adjusting levels, applying effects, and panning sounds to masterfully bring your piece to life.';
       break;
     case 'mastering':
-      infoText = 'Mastering is the final touch that takes your track from great, to a fully-fledged piece. It involves various measures to make your track sound professional and polished across all devices. This means everyone can enjoy your work the way you intended.';
+      infoText = 'Mastering is the final touch that takes your track from a great song to a fully-fledged piece. It involves various measures to make your track sound professional and polished across all devices. This means everyone can enjoy your work the way you intended.';
       break;
     default:
       infoText = 'No information available.';
   }
-  // Set the text in the popup
+  
+  // Update the info-text in the popup
+  const popup = document.getElementById('info-popup');
   document.getElementById('info-text').innerText = infoText;
+  
   // Get the position of the clicked element
   const rect = element.getBoundingClientRect();
-  // Position the popup box
-  const popup = document.getElementById('info-popup');
-  popup.style.top = rect.bottom + window.scrollY + 16 + 'px';
-  popup.style.left = rect.left + 'px';
-  // Show the popup
-  popup.style.display = 'block';
+  
+  // Use requestAnimationFrame for smoother style updates
+  requestAnimationFrame(() => {
+    popup.style.top = rect.bottom + window.scrollY + 16 + 'px';
+    popup.style.left = rect.left + 'px';
+    // Show the popup after positioning
+    popup.style.display = 'block';
+  });
 }
 function closeInfoPopup() {
   document.getElementById('info-popup').style.display = 'none';

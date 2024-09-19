@@ -584,6 +584,10 @@ select option[value=""] {
   display: inline-block;
 }
 
+.large-box input {
+  cursor: pointer;
+}
+
 .highlight-stroke {
   position: absolute;
   width: 100%;
