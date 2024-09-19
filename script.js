@@ -48,7 +48,13 @@ function selectBoxes(ids) {
   // Deselects All
   boxes.querySelectorAll('.large-box').forEach(box => {
     const label = box.closest('.large-box');
+    const input = label.querySelector('input[type="checkbox"]');
     const highlightStroke = label.querySelector('.highlight-stroke path');
+    
+    // Uncheck the checkbox to remove the :checked style
+    if (input && input.checked) {
+      input.checked = false;
+    }
     if (highlightStroke) {
       deselectLBox(label, highlightStroke);
     }
@@ -373,4 +379,40 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+
+  function hideQuestions() {
+
+    const submitButton = document.getElementById('get-package');
+    const questions = document.querySelectorAll('.question');
+    
+    // Hide all questions except the first one
+    submitButton.style.display = 'none';
+    questions.forEach((question, index) => {
+        if (index !== 0) {
+            question.style.display = 'none';
+        }
+    });
+
+    // Add event listeners to each ".question" element
+    questions.forEach((question, index) => {
+      question.addEventListener('change', () => {
+        // Hide ones after, display ones before
+          questions.forEach((q, i) => {
+              q.style.display = i <= index ? 'flex' : 'none';
+          });
+      });
+    });
+
+    // Add event listener to last question - show submit button
+    const lastQuestion = document.querySelector('.last-question');
+    lastQuestion.addEventListener('change', () => {
+      submitButton.style.display = "flex";
+    });
+  }
+
+
+  hideQuestions();
+
+
 });
