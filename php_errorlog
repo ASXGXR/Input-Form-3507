@@ -1,0 +1,57 @@
+[30-Jul-2024 21:34:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function OpenCon() in /home/customer/www/3507.co.uk/public_html/enqiries/enquiry_in.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/3507.co.uk/public_html/enqiries/enquiry_in.php on line 3
+[30-Jul-2024 21:35:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function OpenCon() in /home/customer/www/3507.co.uk/public_html/enqiries/enquiry_in.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/3507.co.uk/public_html/enqiries/enquiry_in.php on line 3
+[30-Jul-2024 21:37:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function OpenCon() in /home/customer/www/3507.co.uk/public_html/enqiries/enquiry_in.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/3507.co.uk/public_html/enqiries/enquiry_in.php on line 3
+[30-Jul-2024 21:37:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function OpenCon() in /home/customer/www/3507.co.uk/public_html/enqiries/enquiry_in.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/3507.co.uk/public_html/enqiries/enquiry_in.php on line 3
+[30-Jul-2024 21:37:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function OpenCon() in /home/customer/www/3507.co.uk/public_html/enqiries/enquiry_in.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/3507.co.uk/public_html/enqiries/enquiry_in.php on line 3
+[30-Jul-2024 21:37:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function OpenCon() in /home/customer/www/3507.co.uk/public_html/enqiries/enquiry_in.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/3507.co.uk/public_html/enqiries/enquiry_in.php on line 3
+[31-Jul-2024 18:30:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 33
+[31-Jul-2024 18:30:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php:33
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 33
+[31-Jul-2024 21:18:25 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 33
+[31-Jul-2024 21:20:22 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 30
+[31-Jul-2024 21:20:24 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 30
+[31-Jul-2024 21:24:22 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 30
+[31-Jul-2024 21:24:24 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 30
+[01-Aug-2024 21:53:07 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' or ',' in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 89
+[01-Aug-2024 21:54:01 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' or ',' in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 89
+[01-Aug-2024 21:59:34 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ';' or ',' in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 89
+[01-Aug-2024 22:10:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function int() in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 45
+[01-Aug-2024 22:10:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function int() in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 45
+[01-Aug-2024 22:11:48 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ';' or ',' in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 71
+[01-Aug-2024 22:12:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function int() in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 45
+[01-Aug-2024 22:12:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function int() in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php:45
+Stack trace:
+#0 {main}
+  thrown in /home/customer/www/3507.co.uk/public_html/enquiries/enquiry_in.php on line 45
