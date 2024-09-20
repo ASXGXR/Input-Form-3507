@@ -897,3 +897,16 @@ select option[value=""] {
   bottom: 6vh;
   right: 10vw;
 }
+
+
+
+.question {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.question.show {
+  opacity: 1;
+  transform: translateY(0);
+}

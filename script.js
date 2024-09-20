@@ -34,8 +34,29 @@ function showSections(selector) {
 }
 
 
+// Shows Next Question
+function showNextQuestion(index, questions) {
+  // Add a short delay before showing the next question
+  setTimeout(() => {
+      questions.forEach((q2, i) => {
+          q2.style.display = i <= index ? 'flex' : 'none';
+          setTimeout(() => q2.classList.toggle('show', i <= index), 10);
+      });
+
+      if (index + 1 < questions.length) {
+          questions[index + 1].style.display = 'flex';
+          setTimeout(() => {
+              questions[index + 1].classList.add('show');
+              // Scroll to the next question once it's displayed
+              scrollToView(questions[index + 1]);
+          }, 10); // Add a small delay to trigger the show transition
+      }
+  }, 300); // Delay before executing the logic
+}
+
+
 // Moves view to large boxes
-function moveViewToBoxes(boxes) {
+function scrollToView(boxes) {
   if (boxes) {
     // Scroll smoothly to the large boxes, aligning to the top
     boxes.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -43,7 +64,7 @@ function moveViewToBoxes(boxes) {
 }
 // Selects
 function selectBoxes(ids) {
-  const boxes = document.querySelector('.section.large-section .large-boxes');
+  const boxes = document.querySelector('.question.large-section .large-boxes');
 
   // Deselects All
   boxes.querySelectorAll('.large-box').forEach(box => {
@@ -61,7 +82,7 @@ function selectBoxes(ids) {
   });
 
   // Scrolls the view
-  moveViewToBoxes(boxes);
+  scrollToView(boxes);
 
   // Add a class to disable hover effects
   boxes.classList.add('disable-hover');
@@ -85,7 +106,13 @@ function selectBoxes(ids) {
         }
       }, index * 280); // ms delay between each checkbox
     });
+
+    // Shows next question
+    const questions = document.querySelectorAll('.question');
+    showNextQuestion(0,questions);
+
   }, 450); // ms delay before function
+
 }
 
 
@@ -382,32 +409,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   function hideQuestions() {
-
     const submitButton = document.getElementById('get-package');
     const questions = document.querySelectorAll('.question');
-    
+
     // Hide all questions except the first one
     submitButton.style.display = 'none';
-    questions.forEach((question, index) => {
-        if (index !== 0) {
-            question.style.display = 'none';
-        }
+    questions.forEach((q, i) => {
+        q.style.display = i === 0 ? 'flex' : 'none';
+        if (i === 0) q.classList.add('show');
     });
 
     // Add event listeners to each ".question" element
-    questions.forEach((question, index) => {
-      question.addEventListener('change', () => {
-        // Hide ones after, display ones before
-          questions.forEach((q, i) => {
-              q.style.display = i <= index ? 'flex' : 'none';
-          });
-      });
+    questions.forEach((q, index) => {
+        q.addEventListener('change', () => {
+            showNextQuestion(index, questions);
+        });
     });
 
     // Add event listener to last question - show submit button
-    const lastQuestion = document.querySelector('.last-question');
-    lastQuestion.addEventListener('change', () => {
-      submitButton.style.display = "flex";
+    document.querySelector('.last-question').addEventListener('change', () => {
+        submitButton.style.display = 'flex';
+        submitButton.style.opacity = 0;
+        submitButton.style.transform = 'translateY(-50px)';
+        setTimeout(() => {
+            submitButton.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            submitButton.style.opacity = 1;
+            submitButton.style.transform = 'translateY(0)';
+        }, 10);
     });
   }
 
