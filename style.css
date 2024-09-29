@@ -16,11 +16,14 @@
   --basic-font-size: 16px;
   --small-font-size: 14px;
 
+  /* Text */
+  --text-color: #000000;
+
   /* All Inputs */
+  --box-color: rgb(255, 255, 255);
   --line-style: solid;
   --line-width: 1px;
   --line-color: #ccc;
-  --text-color: #000000;
   --radius: 0px;
   --fill-color: white;
   --span-color: #b3b3b3;
@@ -198,7 +201,7 @@ body {
   border-radius: var(--radius);
   border: var(--line-width) var(--line-style) var(--line-color);
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: var(--box-color);
   padding: var(--box-padding);
   box-sizing: border-box;
   min-height: 100px;
@@ -688,7 +691,7 @@ select option[value=""] {
   align-items: center;
 }
 .rates-container {
-  background-color: #ffffff;
+  background-color: var(--box-color);
   padding: 24px 32px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -760,7 +763,7 @@ select option[value=""] {
 .review-text {
   font-size: var(--basic-font-size);
   font-style: italic;
-  color: #333;
+  color: var(--text-color);
   max-width: 70vw;
 }
 
