@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3507 Enquiries</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <!-- <div class="header">
+    <img src="images/3507-logo.png" class="header-logo" />
+    <div class="form-header">
+      <div class="form-title">
+        INQUIRY<br>FORM
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="page-break-pink"></div> -->
+
+  <div class="rotated-bar">
+    <span>Enquiries</span>
+  </div>
+
+  <img src=svgs/down-arrow.svg class="down-arrow">
+
+  <form class="wrapper" action="enquiry_in.php" method="post">
+
+    <!-- <img src="images/enquiries-logo.png" class="enquiries-logo"/> -->
+
+    <!-- Rates Reminder -->
+    <div class="section rates-section">
+      <h2>reminder of session rates</h2>
+      <div class="rates-container">
+        <div class="rate-item hover-effect pointer"
+        onclick="selectBoxes(['FOR_REC'])">
+            <p class="price">£30</p>
+            <p class="label">HOURLY RATE</p>
+            <p class="note">Min. 2 hour booking</p>
+        </div>
+        <div class="rate-item hover-effect pointer" 
+        onclick="selectBoxes(['FOR_REC'])">
+            <p class="price">£200</p>
+            <p class="label">FULL DAY RECORDING</p>
+            <p class="note">8 hours (with engineer)</p>
+        </div>
+        <div class="rate-item hover-effect pointer" 
+        onclick="selectBoxes(['FOR_MIX','FOR_MASTER'])">
+            <p class="price">£130</p>
+            <p class="label">MIX & MASTER</p>
+            <p class="note">Mix - £100<br>Master - £30</p>
+        </div>
+        <div class="rate-item hover-effect pointer" 
+        onclick="selectBoxes(['FOR_REC','FOR_MIX','FOR_MASTER'])">
+            <p class="price">£350</p>
+            <p class="label">PRODUCED BY NICK</p>
+            <p class="note">Full song (recorded, mixed & mastered)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="two-inputs">
+      <img class="header-logo" src="images/3507-logo.png"/>
+      <div class="review-container">
+        <p class="review-text">"Thoroughly enjoyable first session, the whole experience was everything I could wish for"</p>
+        <div class="stars">
+          <span>&#9733;</span>
+          <span>&#9733;</span>
+          <span>&#9733;</span>
+          <span>&#9733;</span>
+          <span>&#9733;</span>
+          <p class="review-text">- Lee</p>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- I'm Looking For [FOR_REC,MIX,MASTER] -->
+    <div class="question large-section">
+      <h2>I'm Looking For: </h2>
+      <h3>Please Select All That Apply:</h3>
+
+      <div class="large-boxes">
+        <label class="option large-box blue-hue">
+          <input type="checkbox" id="FOR_REC" name="FOR_REC" value="1">
+          <div class="highlight-container">
+            <h1>RECORDING</h1>
+            <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
+              <path d="M10 50 Q 250 0 490 50" fill="none" stroke="blue" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500"/>
+            </svg>
+          </div>
+          <img src="images/recording-img.png" alt="Recording" draggable="false">
+        </label>
+    
+        <label class="option large-box green-hue">
+          <input type="checkbox" id="FOR_MIX" name="FOR_MIX" value="1">
+          <div class="highlight-container">
+            <h1>MIXING</h1>
+            <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
+              <path d="M10 50 Q 250 0 490 50" fill="none" stroke="green" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500"/>
+            </svg>
+          </div>
+          <img src="images/mixing-img.png" alt="Mixing" draggable="false">
+        </label>
+    
+        <label class="option large-box red-hue">
+          <input type="checkbox" id="FOR_MASTER" name="FOR_MASTER" value="1">
+          <div class="highlight-container">
+            <h1>MASTERING</h1>
+            <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
+              <path d="M10 50 Q 250 0 490 50" fill="none" stroke="red" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500"/>
+            </svg>
+          </div>
+          <img src="images/mastering-img.png" alt="Mastering" draggable="false">
+        </label>
+      </div>
+
+      <!-- Info Boxes -->
+      <div class="large-boxes">
+        <p class="info-text large-box" onclick="showInfo(this, 'recording')">Recording? <i class="fas fa-info-circle"></i></p>
+        <p class="info-text large-box" onclick="showInfo(this, 'mixing')">Mixing? <i class="fas fa-info-circle"></i></p>
+        <p class="info-text large-box" onclick="showInfo(this, 'mastering')">Mastering? <i class="fas fa-info-circle"></i></p>
+      </div>
+      <div id="info-popup" class="info-popup">
+        <div class="info-popup-content">
+          <span class="close" onclick="closeInfoPopup()">&times;</span>
+          <p id="info-text"></p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Booking For [FOR_SOLO,BAND,SW,OTHER] -->
+    <div class="question">
+      <h2>I Am A: </h2>
+      <div class="tick-boxes">
+        <label class="option btn-posnawr" onclick="showSections('.artist');changeLabelText('ARTIST NAME:')">
+          <input type="radio" id="FOR_SOLO" name="artist_type" value="SOLO" required>
+          <p>Solo Artist</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr" onclick="showSections('.band');changeLabelText('BAND NAME:')">
+          <input type="radio" id="FOR_BAND" name="artist_type" value="BAND">
+          <p>Band</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr" onclick="showSections('.spoken-word')">
+          <input type="radio" id="FOR_SW" name="artist_type" value="SPOKEN_WORD">
+          <p>Spoken Word Vocalist</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr" onclick="addOtherInput(event); showSections()">
+          <input type="radio" id="FOR_OTHER" name="artist_type" value="OTHER">
+          <p>Other</p>
+          <span></span>
+        </label>
+      </div>
+    </div>
+
+
+    <!-- Name & Artist/Band Name [NAME,ARTIST_NAME] -->
+    <div class="question two-inputs">
+      <!-- Name [NAME] -->
+      <div class="form-item text-input">
+        <label for="NAME">NAME:</label>
+        <input type="text" id="NAME" name="NAME" required autocomplete="name">
+      </div>
+      <!-- Artist Name [ARTIST_NAME] -->
+      <div class="form-item text-input artist band">
+        <label for="ARTIST_NAME"></label>
+        <input type="text" id="ARTIST_NAME" name="ARTIST_NAME">
+      </div>
+    </div>
+
+
+    <!-- I Want To Record [TYPE_SINGLE,MULTI,OTHER] -->
+    <div class="question recording">
+      <h2>I Want To Record: </h2>
+      <div class="tick-boxes">
+        <label class="option btn-posnawr artist band">
+          <input type="radio" id="TYPE_SINGLE" name="record_type" value="1_SONG" required>
+          <p>A Song</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr artist band">
+          <input type="radio" id="TYPE_MULTI" name="record_type" value="ALBUM_EP">
+          <p>Album / EP</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr spoken-word">
+          <input type="radio" id="TYPE_SW" name="record_type" value="SPOKEN_WORD">
+          <p>Spoken Word</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr" onclick="addOtherInput(event)">
+          <input type="radio" id="TYPE_OTHER" name="record_type" value="OTHER">
+          <p>Other</p>
+          <span></span>
+        </label>
+      </div>
+    </div>
+
+
+    <!-- Music Genre [GENRE]-->
+    <div class="question artist band">
+      <h2>Music Genre:</h2>
+      <div class="form-item">
+        <select id="GENRE" name="GENRE">
+          <option value="" disabled selected>SELECT GENRE</option>
+          <option value="Pop">Pop</option>
+          <option value="Rock">Rock</option>
+          <option value="Hip Hop">Hip Hop</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Classical">Classical</option>
+          <option value="Blues">Blues</option>
+          <option value="Country">Country</option>
+          <option value="Electronic">Electronic</option>
+          <option value="Reggae">Reggae</option>
+          <option value="Funk">Funk</option>
+          <option value="Soul">Soul</option>
+          <option value="R&B">R&B</option>
+          <option value="Metal">Metal</option>
+          <option value="Punk">Punk</option>
+          <option value="Folk">Folk</option>
+          <option value="Techno">Techno</option>
+          <option value="House">House</option>
+          <option value="Latin">Latin</option>
+          <option value="Reggaeton">Reggaeton</option>
+          <option value="Dancehall">Dancehall</option>
+          <option value="K-Pop">K-Pop</option>
+          <option value="Indie">Indie</option>
+          <option value="Alternative">Alternative</option>
+          <option value="Other">Other</option>
+        </select>        
+      </div>
+    </div>
+
+
+    <!-- Instruments Offered -->
+    <div class="question artist band recording">
+      <h2>Instruments Offered By 3507</h2>
+      <h3>Select Any You Wish To Use:</h3>
+      <div class="tick-boxes">
+        <label class="option btn-posnawr">
+          <input type="checkbox" id="electric-guitar" name="instrument" value="electric-guitar">
+          <p>Electric Guitar</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr">
+          <input type="checkbox" id="acoustic-guitar" name="instrument" value="acoustic-guitar">
+          <p>Acoustic Guitar</p>
+          <!-- <img src="svgs/acoustic-guitar.svg"/> -->
+          <span></span>
+        </label>
+        <label class="option btn-posnawr">
+          <input type="checkbox" id="bass" name="instrument" value="bass">
+          <p>Bass</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr">
+          <input type="checkbox" id="acoustic-piano" name="instrument" value="acoustic-piano">
+          <p>Acoustic Piano</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr">
+          <input type="checkbox" id="amps" name="instrument" value="amps">
+          <p>Amps</p>
+          <span></span>
+        </label>
+      </div>
+    </div>
+
+
+    <!-- Session Musicians Needed -->
+    <div class="question artist band recording">
+      <h2>Extra Session Musicians Needed?</h2>
+      <div class="tick-boxes">
+        <label class="option btn-posnawr">
+          <input type="checkbox" id="drums" name="musician" value="drums">
+          <p>Drums</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr">
+          <input type="checkbox" id="bass-musician" name="musician" value="bass">
+          <p>Bass</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr">
+          <input type="checkbox" id="keys" name="musician" value="keys">
+          <p>Keys</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr">
+          <input type="checkbox" id="vocalist" name="musician" value="vocalist">
+          <p>Vocalist</p>
+          <span></span>
+        </label>
+      </div>
+    </div>
+
+
+    <!-- Equipment to Bring -->
+    <div class="question recording">
+      <h2>What equipment will you bring? This could be laptops, instruments..</h2>
+      <div class="tick-boxes equipment">
+        <div class="form-item">
+          <input type="text" id="equipment1" name="equipment1" placeholder="Item 1...">
+        </div>
+        <div class="form-item">
+          <input type="text" id="equipment2" name="equipment2" placeholder="Item 2...">
+        </div>
+        <div class="form-item">
+          <input type="text" id="equipment3" name="equipment3" placeholder="Item 3...">
+        </div>
+        <button type="button" class="add-item-button" onclick="addNewInput()">+</button>
+      </div>
+    </div>
+
+
+    <!-- Session Timing -->
+    <div class="question">
+      <h2>How soon do you want to start?</h2>
+      <div class="tick-boxes">
+        <label class="option btn-posnawr">
+          <input type="radio" id="next-slot" name="session-timing" value="next-slot" required>
+          <p>Next Slot!</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr">
+          <input type="radio" id="within-week" name="session-timing" value="within-week">
+          <p>Within a week</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr">
+          <input type="radio" id="within-month" name="session-timing" value="within-month">
+          <p>Within a month</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr" onclick="addOtherInput(event)">
+          <input type="radio" id="other" name="session-timing" value="other">
+          <p>Other</p>
+          <span></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Session Goals -->
+    <div class="question artist band spoken-word">
+      <h2>What do you want to have achieved by the end of the session?</h2>
+      <div class="tick-boxes">
+        <label class="option btn-posnawr artist band">
+          <input type="radio" id="full-song" name="session-goal" value="full-song" required>
+          <p>A full song</p>
+          <span></span>
+        </label>
+        <label class="option btn-posnawr spoken-word">
+          <input type="radio" id="full-song" name="session-goal" value="full-song" required>
+          <p>A full recording</p>
+          <span></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Enter Email [EMAIL]-->
+    <div class="question form-item text-input last-question">
+      <label for="EMAIL">EMAIL ADDRESS:</label>
+      <input type="email" id="EMAIL" name="EMAIL" required>
+    </div>
+
+    <!-- Get Package Button -->
+    <button type="submit" class="access-button collision-btn" id="get-package">
+      <img src="images/3507-logo.png" alt="Logo" />
+      <span>GET MY QUOTE</span>
+    </button>
+    <p id="selected-options"></p>
+
+  </form>
+  <!-- <script src="script.js"></script> -->
+
+</body>
+
+</html>
