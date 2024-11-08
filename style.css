@@ -32,6 +32,9 @@
   --text-selected: white;
   --box-padding: 16px;
   --border: var(--line-width) var(--line-style) var(--line-color);
+  --box-title: clamp(14px,2.3vmin,24px);
+  
+  
   /* Collision Button */
   --collision-anim-speed: 0.6s;
   /* Position Aware Button */
@@ -109,6 +112,9 @@ input {
 
 /* MAIN CSS */
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;
@@ -252,6 +258,10 @@ label {
 .logo {
   width: 10vmin;
   height: auto;
+  position: fixed;
+}
+.home-and-arrow {
+  margin-left: 72px;
 }
 .home-text {
   color: var(--white);
@@ -315,6 +325,7 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: calc(var(--gap)*4);
 }
 h2 {
   font-size: 24px;
@@ -340,10 +351,12 @@ h3 {
   font-family: var(--primary-font);
 }
 .large-boxes {
-  display: flex;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
   gap: calc(var(--gap)*3);
+  row-gap: calc(var(--gap)*2);
   flex-direction: column;
-  align-items: center;
 }
 .large-box {
   cursor: pointer;
@@ -353,7 +366,7 @@ h3 {
   gap: var(--gap);
   align-items: center;
   min-width: 240px;
-  font-size: 2.3vmin;
+  font-size: var(--box-title);
   border-radius: var(--radius) !important;
 }
 .large-box:has(input[type="checkbox"]:checked) {
@@ -690,7 +703,7 @@ button {
   --hue-saturation: 1.5;
 }
 .option {
-  transition: transform 0.55s ease, background 0.45s ease;
+  transition: transform 0.55s ease, background 0.45s ease, color 0.3s ease;
 }
 
 /* Rotations */
@@ -805,62 +818,6 @@ select option[value=""] {
     stroke-dashoffset: 500;
   }
 }
-
-
-/* Info Boxes */
-
-.info-text {
-  cursor: pointer;
-  text-transform: uppercase;
-  margin: 0;
-  margin-top: var(--gap);
-  font-size: var(--small-font-size);
-  opacity: 0.4;
-  flex-direction: row;
-  justify-content: center;
-  gap: 4px;
-  padding: 6px;
-}
-#info-text {
-  color: var(--black);
-}
-
-/* Popup container */
-.info-popup {
-  display: none;
-  position: absolute;
-  z-index: 100;
-  background-color: #fefefe;
-  padding: var(--box-padding);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  font-size: 14px;
-  width: 205px;
-  height: auto;
-  border: var(--border);
-}
-
-.info-popup p {
-  text-transform: none;
-}
-
-/* Close button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-
-/* Showing / Hiding Smoothly */
-
 
 
 
@@ -1011,9 +968,6 @@ select option[value=""] {
   .header {
     flex-direction: row;
   }
-  .large-boxes {
-    flex-direction: row;
-  }
   :root {
     --gap: 20px;
   }
@@ -1025,10 +979,14 @@ select option[value=""] {
 
 
 /* For Small Screens - Media Queries */
-@media (max-width: 769px) {
+@media (max-width: 840px) {
   .large-box {
     min-width: 0;
     width: 50vw;
+  }
+  .large-boxes {
+    display: flex;
+    flex-direction: column;
   }
   .rates-section {
     width: 50%;
@@ -1081,3 +1039,172 @@ select option[value=""] {
   opacity: 1;
   transform: translateY(0);
 } */
+
+
+
+
+
+
+/* Info Boxes */
+
+:root {
+  --cutout-size: 4%;
+}
+
+.info-text {
+  gap: 4px;
+  padding: 4px;
+  color: #757474; /* Allows box to have full opacity */
+  cursor: pointer;
+  flex-direction: row;
+  width: min-content;
+}
+
+/* Style for the info icon */
+.info-text {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  justify-content: center;
+}
+.info-text svg {
+  padding: 0;
+  margin: 0;
+  height: 20px;
+  width: min-content;
+}
+
+/* Hidden pop-up box */
+.info-text::after {
+  content: attr(data-info);
+  position: absolute;
+  bottom: 120%; /* Above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 16px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  white-space: normal;
+  line-height: 1.5;
+  z-index: 10;
+
+  /* clip-path: polygon(
+    var(--cutout-size) 0%, 
+    calc(100% - var(--cutout-size)) 0%, 
+    100% var(--cutout-size), 
+    100% calc(100% - var(--cutout-size)), 
+    calc(100% - var(--cutout-size)) 100%, 
+    var(--cutout-size) 100%, 
+    0% calc(100% - var(--cutout-size)), 
+    0% var(--cutout-size)
+  ); */
+  /* border-radius: 10px; */
+
+  box-shadow: 0 2px 8px black;
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 16px;
+  width: 36vmin;
+}
+/* .info-text.blue::after {
+  border: 2px solid rgba(0, 0, 255, 0.5);
+}
+.info-text.red::after {
+  border: 2px solid rgba(255, 0, 0, 0.5);
+}
+.info-text.green::after {
+  border: 2px solid rgba(0, 128, 0, 0.5);
+} */
+
+/* Show pop-up on hover or focus */
+.info-text:hover::after,
+.info-text:focus::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Optional: Pop-up pointer/arrow */
+.info-text::before {
+  content: "";
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--white) transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Show the pointer/arrow on hover or focus */
+.info-text:hover::before,
+.info-text:focus::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+/* Bouncing Arrow */
+
+.bouncing-arrow {
+  opacity: 0;
+  padding: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  animation: bounce 2s infinite;
+  transition: opacity 0.5s ease;
+  margin-top: calc(var(--gap)*2);
+}
+
+/* arrow lines */
+.bouncing-arrow::before,
+.bouncing-arrow::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 15px;
+  background-color: var(--white);
+  transform-origin: top center;
+}
+
+.bouncing-arrow::before {
+  transform: translateX(-50%) rotate(225deg);
+}
+
+.bouncing-arrow::after {
+  transform: translateX(-50%) rotate(135deg);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }   
+  40% {
+      transform: translateY(-15px);
+  }   
+  60% {
+      transform: translateY(-7px);
+  }   
+}
+
+
+.box-wrapper {
+  gap: calc(var(--gap)*2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.nobreak {
+  white-space: nowrap;
+}

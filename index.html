@@ -1,184 +1,506 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3507 Enquiries</title>
-  <!-- Styles -->
-  <link rel="stylesheet" href="old-style.css">
-  <link rel="stylesheet" href="style.css">
-  <!-- Scripts -->
-  <script src="script.js" defer></script>
-  <script src="old-script.js" defer></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3507 Enquiries</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="old-style.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+    <script src="old-script.js" defer></script>
+  </head>
+  <body>
 
-  <!-- NAV -->
-  <div class="nav">
-    <!-- Top Left -->
-    <div class="top-left-nav">
-      <a href="https://3507.co.uk">
-        <img class="logo" src="images/3507-logo.png" />
-      </a>
-      <a href="https://3507.co.uk" class="top-left-nav">
-        <img class="back-arrow" src="svgs/back-arrow.svg">        
-        <p class="home-text">3507 Studio Recording</p>
-      </a>
+    <!-- NAV -->
+    <div class="nav">
+
+      <!-- LOGO - Top Left -->
+      <div class="top-left-nav">
+        <a href="https://3507.co.uk">
+          <img class="logo" src="images/3507-logo.png" />
+        </a>
+        <a href="https://3507.co.uk" class="top-left-nav home-and-arrow">
+          <img class="back-arrow" src="svgs/back-arrow.svg">
+          <p class="home-text">3507 Studio Recording</p>
+        </a>
+      </div>
+
+      <!-- RATES section -->
+      <div class="price-section">
+        <p class="rates-txt">RATES</p>
+        <div class="price-box">
+          <div class="price">£30</div>
+          <div class="price-label">HOURLY RATE</div>
+          <div class="price-note">Min. 2 Hour Booking</div>
+        </div>
+        <div class="price-box">
+          <div class="price">£200</div>
+          <div class="price-label">DAY RECORDING</div>
+          <div class="price-note">8 Hours (With<br>Engineer)</div>
+        </div>
+        <div class="price-box">
+          <div class="price">£130</div>
+          <div class="price-label">MIX & MASTER</div>
+          <div class="price-note">Mix - £100<br>Master - £30</div>
+        </div>
+        <div class="price-box">
+          <div class="price">£350</div>
+          <div class="price-label">PRODUCED BY NICK</div>
+          <div class="price-note">Full Song (Recorded,<br>Mixed &
+            Mastered)</div>
+        </div>
+      </div>
     </div>
 
-    <!-- Price Section -->
-    <div class="price-section">
-      <p class="rates-txt">RATES</p>
-      <div class="price-box">
-        <div class="price">£30</div>
-        <div class="price-label">HOURLY RATE</div>
-        <div class="price-note">Min. 2 Hour Booking</div>
-      </div>
-      <div class="price-box">
-        <div class="price">£200</div>
-        <div class="price-label">DAY RECORDING</div>
-        <div class="price-note">8 Hours (With<br>Engineer)</div>
-      </div>
-      <div class="price-box">
-        <div class="price">£130</div>
-        <div class="price-label">MIX & MASTER</div>
-        <div class="price-note">Mix - £100<br>Master - £30</div>
-      </div>
-      <div class="price-box">
-        <div class="price">£350</div>
-        <div class="price-label">PRODUCED BY NICK</div>
-        <div class="price-note">Full Song (Recorded,<br>Mixed & Mastered)</div>
-      </div>
-    </div>
-  </div>
 
-  <!-- HERO CONTENT -->
-  <div class="wrapper">
+    <form class="wrapper">
 
-    <!-- Hero Text -->
-    <div class="hero-section">
-      <div class="header-text">
-        <h3 class="project-title">YOUR 3507 PROJECT</h3>
-        <h2 class="project-subtitle" id="subtitle"></h2>
-        <img src="svgs/music-note.svg" class="music-note">
-      </div>
-      <!-- SCRIPT- Main Title -->
-      <script>
+
+      <!-- HERO CONTENT -->
+      <div class="hero-section">
+        <div class="header-text">
+          <h3 class="project-title">YOUR 3507 PROJECT</h3>
+          <h2 class="project-subtitle" id="subtitle"></h2>
+          <img src="svgs/music-note.svg" class="music-note">
+        </div>
+        <!-- SCRIPT- Main Title -->
+        <script>
         const subtitle = document.getElementById('subtitle');
         subtitle.innerHTML = window.innerWidth <= 768 
           ? "What music do you make? Let's create something great."
           : "What music do you make?<br>Let's create something great.";
-      </script>
+        </script>
 
-      <!-- Incentives -->
-      <div class="highlight-group">
-        <div class="hdash unselectable">
-          <svg width="286" height="76" viewBox="0 0 286 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M189.852 3.37956C216.832 2.29237 244.643 1.10635 251.471 0.612169C258.299 0.216827 265.793 -0.0796798 268.125 0.0191558C271.789 0.117991 272.288 0.612169 272.788 4.07141C273.121 6.2458 272.122 9.70504 270.623 11.6818C269.291 13.7573 267.459 15.4375 266.46 15.4375C265.46 15.4375 264.794 16.2282 264.794 17.1177C264.794 18.1061 265.627 19.2921 266.626 19.8851C267.625 20.4781 267.958 22.6525 267.459 24.8269C267.126 27.0013 266.293 29.9663 265.793 31.4489C264.794 34.2163 264.794 34.2163 285.611 34.7104L285.944 38.6639C286.278 41.2336 285.112 44.0998 282.447 47.0649C280.282 49.5358 275.952 54.6752 272.788 58.431C269.624 62.1867 265.793 65.646 264.295 66.1401C262.796 66.5355 248.474 67.3262 232.819 67.8203C216.998 68.4134 192.017 69.5005 177.362 70.2912C162.707 71.0819 144.388 72.1691 136.561 72.6633C128.733 73.2563 115.244 74.1458 106.584 74.8377C97.9239 75.5295 89.4305 75.7272 87.9317 75.3318C86.0998 74.9365 84.7675 73.5528 84.1013 68.3145L59.9534 68.1168C41.9674 68.018 35.4724 67.6227 34.4732 66.6343C33.8071 65.9425 33.6405 63.7681 34.3067 61.8902C34.9728 59.3205 34.6398 58.2333 32.6413 57.7391C30.8094 57.1461 29.9767 55.5647 29.9767 52.5008C29.9767 49.6346 29.3106 48.0532 27.9783 47.9544C26.8125 47.9544 21.6498 47.9544 16.6537 48.0532C11.6576 48.1521 5.8288 47.7567 3.83036 47.1637C0.832686 46.373 0 45.187 0 42.3208C0 39.9487 1.66537 37.0825 4.99612 34.0186C7.66071 31.35 10.8249 29.0768 11.6576 28.7803C12.6568 28.4838 13.323 26.3094 13.323 23.8385C13.323 21.3676 14.4887 17.9084 15.821 16.2282C17.1533 14.4491 19.9845 11.9783 21.9829 10.7922C25.4802 8.81552 27.9783 8.61785 51.6266 8.02484C65.7822 7.72833 91.5955 7.03648 109.082 6.44347C126.568 5.85045 162.873 4.56559 189.852 3.37956Z" 
-            fill="#FBF455"/>
-          </svg>
-          <img class="clock" src="svgs/clock.svg">
-          <p>30 seconds<br>to complete</p>
+        <!-- Incentives -->
+        <div class="highlight-group">
+          <div class="hdash unselectable">
+            <svg width="286" height="76" viewBox="0 0 286 76" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M189.852 3.37956C216.832 2.29237 244.643 1.10635 251.471 0.612169C258.299 0.216827 265.793 -0.0796798 268.125 0.0191558C271.789 0.117991 272.288 0.612169 272.788 4.07141C273.121 6.2458 272.122 9.70504 270.623 11.6818C269.291 13.7573 267.459 15.4375 266.46 15.4375C265.46 15.4375 264.794 16.2282 264.794 17.1177C264.794 18.1061 265.627 19.2921 266.626 19.8851C267.625 20.4781 267.958 22.6525 267.459 24.8269C267.126 27.0013 266.293 29.9663 265.793 31.4489C264.794 34.2163 264.794 34.2163 285.611 34.7104L285.944 38.6639C286.278 41.2336 285.112 44.0998 282.447 47.0649C280.282 49.5358 275.952 54.6752 272.788 58.431C269.624 62.1867 265.793 65.646 264.295 66.1401C262.796 66.5355 248.474 67.3262 232.819 67.8203C216.998 68.4134 192.017 69.5005 177.362 70.2912C162.707 71.0819 144.388 72.1691 136.561 72.6633C128.733 73.2563 115.244 74.1458 106.584 74.8377C97.9239 75.5295 89.4305 75.7272 87.9317 75.3318C86.0998 74.9365 84.7675 73.5528 84.1013 68.3145L59.9534 68.1168C41.9674 68.018 35.4724 67.6227 34.4732 66.6343C33.8071 65.9425 33.6405 63.7681 34.3067 61.8902C34.9728 59.3205 34.6398 58.2333 32.6413 57.7391C30.8094 57.1461 29.9767 55.5647 29.9767 52.5008C29.9767 49.6346 29.3106 48.0532 27.9783 47.9544C26.8125 47.9544 21.6498 47.9544 16.6537 48.0532C11.6576 48.1521 5.8288 47.7567 3.83036 47.1637C0.832686 46.373 0 45.187 0 42.3208C0 39.9487 1.66537 37.0825 4.99612 34.0186C7.66071 31.35 10.8249 29.0768 11.6576 28.7803C12.6568 28.4838 13.323 26.3094 13.323 23.8385C13.323 21.3676 14.4887 17.9084 15.821 16.2282C17.1533 14.4491 19.9845 11.9783 21.9829 10.7922C25.4802 8.81552 27.9783 8.61785 51.6266 8.02484C65.7822 7.72833 91.5955 7.03648 109.082 6.44347C126.568 5.85045 162.873 4.56559 189.852 3.37956Z"
+                fill="#FBF455" />
+            </svg>
+            <img class="clock" src="svgs/clock.svg">
+            <p>30 seconds<br>to complete</p>
+          </div>
+          <div class="hdash unselectable">
+            <svg width="286" height="76" viewBox="0 0 286 76" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M189.852 3.37956C216.832 2.29237 244.643 1.10635 251.471 0.612169C258.299 0.216827 265.793 -0.0796798 268.125 0.0191558C271.789 0.117991 272.288 0.612169 272.788 4.07141C273.121 6.2458 272.122 9.70504 270.623 11.6818C269.291 13.7573 267.459 15.4375 266.46 15.4375C265.46 15.4375 264.794 16.2282 264.794 17.1177C264.794 18.1061 265.627 19.2921 266.626 19.8851C267.625 20.4781 267.958 22.6525 267.459 24.8269C267.126 27.0013 266.293 29.9663 265.793 31.4489C264.794 34.2163 264.794 34.2163 285.611 34.7104L285.944 38.6639C286.278 41.2336 285.112 44.0998 282.447 47.0649C280.282 49.5358 275.952 54.6752 272.788 58.431C269.624 62.1867 265.793 65.646 264.295 66.1401C262.796 66.5355 248.474 67.3262 232.819 67.8203C216.998 68.4134 192.017 69.5005 177.362 70.2912C162.707 71.0819 144.388 72.1691 136.561 72.6633C128.733 73.2563 115.244 74.1458 106.584 74.8377C97.9239 75.5295 89.4305 75.7272 87.9317 75.3318C86.0998 74.9365 84.7675 73.5528 84.1013 68.3145L59.9534 68.1168C41.9674 68.018 35.4724 67.6227 34.4732 66.6343C33.8071 65.9425 33.6405 63.7681 34.3067 61.8902C34.9728 59.3205 34.6398 58.2333 32.6413 57.7391C30.8094 57.1461 29.9767 55.5647 29.9767 52.5008C29.9767 49.6346 29.3106 48.0532 27.9783 47.9544C26.8125 47.9544 21.6498 47.9544 16.6537 48.0532C11.6576 48.1521 5.8288 47.7567 3.83036 47.1637C0.832686 46.373 0 45.187 0 42.3208C0 39.9487 1.66537 37.0825 4.99612 34.0186C7.66071 31.35 10.8249 29.0768 11.6576 28.7803C12.6568 28.4838 13.323 26.3094 13.323 23.8385C13.323 21.3676 14.4887 17.9084 15.821 16.2282C17.1533 14.4491 19.9845 11.9783 21.9829 10.7922C25.4802 8.81552 27.9783 8.61785 51.6266 8.02484C65.7822 7.72833 91.5955 7.03648 109.082 6.44347C126.568 5.85045 162.873 4.56559 189.852 3.37956Z"
+                fill="#FFA358" />
+            </svg>
+            <img class="percent" src="svgs/percent.svg">
+            <p>discount on<br>your order</p>
+          </div>
         </div>
-        <div class="hdash unselectable">
-          <svg width="286" height="76" viewBox="0 0 286 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M189.852 3.37956C216.832 2.29237 244.643 1.10635 251.471 0.612169C258.299 0.216827 265.793 -0.0796798 268.125 0.0191558C271.789 0.117991 272.288 0.612169 272.788 4.07141C273.121 6.2458 272.122 9.70504 270.623 11.6818C269.291 13.7573 267.459 15.4375 266.46 15.4375C265.46 15.4375 264.794 16.2282 264.794 17.1177C264.794 18.1061 265.627 19.2921 266.626 19.8851C267.625 20.4781 267.958 22.6525 267.459 24.8269C267.126 27.0013 266.293 29.9663 265.793 31.4489C264.794 34.2163 264.794 34.2163 285.611 34.7104L285.944 38.6639C286.278 41.2336 285.112 44.0998 282.447 47.0649C280.282 49.5358 275.952 54.6752 272.788 58.431C269.624 62.1867 265.793 65.646 264.295 66.1401C262.796 66.5355 248.474 67.3262 232.819 67.8203C216.998 68.4134 192.017 69.5005 177.362 70.2912C162.707 71.0819 144.388 72.1691 136.561 72.6633C128.733 73.2563 115.244 74.1458 106.584 74.8377C97.9239 75.5295 89.4305 75.7272 87.9317 75.3318C86.0998 74.9365 84.7675 73.5528 84.1013 68.3145L59.9534 68.1168C41.9674 68.018 35.4724 67.6227 34.4732 66.6343C33.8071 65.9425 33.6405 63.7681 34.3067 61.8902C34.9728 59.3205 34.6398 58.2333 32.6413 57.7391C30.8094 57.1461 29.9767 55.5647 29.9767 52.5008C29.9767 49.6346 29.3106 48.0532 27.9783 47.9544C26.8125 47.9544 21.6498 47.9544 16.6537 48.0532C11.6576 48.1521 5.8288 47.7567 3.83036 47.1637C0.832686 46.373 0 45.187 0 42.3208C0 39.9487 1.66537 37.0825 4.99612 34.0186C7.66071 31.35 10.8249 29.0768 11.6576 28.7803C12.6568 28.4838 13.323 26.3094 13.323 23.8385C13.323 21.3676 14.4887 17.9084 15.821 16.2282C17.1533 14.4491 19.9845 11.9783 21.9829 10.7922C25.4802 8.81552 27.9783 8.61785 51.6266 8.02484C65.7822 7.72833 91.5955 7.03648 109.082 6.44347C126.568 5.85045 162.873 4.56559 189.852 3.37956Z" 
-            fill="#FFA358"/>
-          </svg>
-          <img class="percent" src="svgs/percent.svg">
-          <p>discount on<br>your order</p>
-        </div>
-      </div>
-    
-      <!-- Form Section -->
-      <div class="form-section">
-        <div class="form-input name">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" class="input-box">
-        </div>
-        <div class="form-input email">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" class="input-box">
-        </div>
-      </div>
 
-      <!-- SCRIPT- Focuses Name Input -->
-      <script>
+        <!-- Form Section -->
+        <div class="form-section">
+          <div class="form-input name">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" class="input-box">
+          </div>
+          <div class="form-input email">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="input-box">
+          </div>
+        </div>
+
+        <!-- SCRIPT- Focuses Name Input -->
+        <script>
         window.onload = function() {
           // Only on Desktop
           if (window.innerWidth > 768) {
             document.getElementById('name').focus(); // Auto-select the "Name" input field
           }
         };
-      </script>      
+      </script>
+
+      </div>
 
 
-    </div>
+      <div class="questions">
 
+        <!-- Q1 - I'm Looking For [FOR_REC,MIX,MASTER] -->
+        <div class="question" id="q1">
+          <h2>I'm Looking For: </h2>
+          <h3 class="nobreak">PLEASE SELECT ALL THAT APPLY:</h3>
 
-    <!-- I'm Looking For [FOR_REC,MIX,MASTER] -->
-    <div class="questions">
-    
-      <div class="question" id="next-section">
-        <h2>I'm Looking For: </h2>
-        <h3>PLEASE SELECT ALL THAT APPLY:</h3>
+          <div class="large-boxes">
 
-        <div class="large-boxes">
-          <label class="option large-box blue-hue">
-            <input type="checkbox" id="FOR_REC" name="FOR_REC" value="1">
-            <div class="highlight-container">
-              <h1>RECORDING</h1>
-              <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
-                <path d="M10 50 Q 250 0 490 50" fill="none" stroke="#1E80FF" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500"/>
-              </svg>
+            <!-- RECORDING -->
+            <div class="box-wrapper">
+
+              <!-- info -->
+              <div class="info-text blue"
+                data-info="Recording involves capturing your music in its rawest form; laying down each track with extreme precision. At 3507, you’ll have access to top-tier equipment and a creative environment that allows your music to impress, whether you’re a solo artist, band, or spoken word vocalist.">
+                RECORDING?
+                <svg fill="currentColor" width="800px" height="800px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg"><path d="M960 0c530.193 0 960 429.807 960 960s-429.807 960-960 960S0 1490.193 0 960 429.807 0 960 0Zm223.797 707.147c-28.531-29.561-67.826-39.944-109.227-39.455-55.225.657-114.197 20.664-156.38 40.315-100.942 47.024-178.395 130.295-242.903 219.312-11.616 16.025-17.678 34.946 2.76 49.697 17.428 12.58 29.978 1.324 40.49-9.897l.69-.74c.801-.862 1.591-1.72 2.37-2.565 11.795-12.772 23.194-25.999 34.593-39.237l2.85-3.31 2.851-3.308c34.231-39.687 69.056-78.805 115.144-105.345 27.4-15.778 47.142 8.591 42.912 35.963-2.535 16.413-11.165 31.874-17.2 47.744-21.44 56.363-43.197 112.607-64.862 168.888-23.74 61.7-47.405 123.425-70.426 185.398l-2 5.38-1.998 5.375c-20.31 54.64-40.319 108.872-53.554 165.896-10.575 45.592-24.811 100.906-4.357 145.697 11.781 25.8 36.77 43.532 64.567 47.566 37.912 5.504 78.906 6.133 116.003-2.308 19.216-4.368 38.12-10.07 56.57-17.005 56.646-21.298 108.226-54.146 154.681-92.755 47.26-39.384 88.919-85.972 126.906-134.292 12.21-15.53 27.004-32.703 31.163-52.596 3.908-18.657-12.746-45.302-34.326-34.473-11.395 5.718-19.929 19.867-28.231 29.27-10.42 11.798-21.044 23.423-31.786 34.92-21.488 22.987-43.513 45.463-65.634 67.831-13.54 13.692-30.37 25.263-47.662 33.763-21.59 10.609-38.785-1.157-36.448-25.064 2.144-21.954 7.515-44.145 15.046-64.926 30.306-83.675 61.19-167.135 91.834-250.686 19.157-52.214 38.217-104.461 56.999-156.816 17.554-48.928 32.514-97.463 38.834-149.3 4.357-35.71-4.9-72.647-30.269-98.937Zm63.72-401.498c-91.342-35.538-200.232 25.112-218.574 121.757-13.25 69.784 13.336 131.23 67.998 157.155 105.765 50.16 232.284-29.954 232.29-147.084.005-64.997-28.612-111.165-81.715-131.828Z" fill-rule="evenodd" /></svg>
+              </div>
+
+              <!-- selectable box -->
+              <label class="option large-box blue-hue">
+                <input type="checkbox" id="FOR_REC" name="FOR_REC" value="1">
+                <div class="highlight-container">
+                  <h1>RECORDING</h1>
+                  <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
+                    <path d="M10 50 Q 250 0 490 50" fill="none" 
+                    stroke="#0069F1" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500" />
+                  </svg>
+                </div>
+                <img src="images/recording-img.png" alt="Recording"
+                  draggable="false">
+              </label>
+
             </div>
-            <img src="images/recording-img.png" alt="Recording" draggable="false">
-          </label>
-      
-          <label class="option large-box green-hue">
-            <input type="checkbox" id="FOR_MIX" name="FOR_MIX" value="1">
-            <div class="highlight-container">
-              <h1>MIXING</h1>
-              <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
-                <path d="M10 50 Q 250 0 490 50" fill="none" stroke="green" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500"/>
-              </svg>
+
+            <!-- MIXING -->
+            <div class="box-wrapper">
+
+              <!-- info -->
+              <div class="info-text green"
+                data-info="Mixing is where your track begins to take shape. All the individual track elements are expertly blended to create a cohesive piece of music for you. This involves everything from adjusting levels, applying effects, and panning sounds to masterfully bring your music to life.">
+                MIXING?
+                <svg fill="currentColor" width="800px" height="800px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg"><path d="M960 0c530.193 0 960 429.807 960 960s-429.807 960-960 960S0 1490.193 0 960 429.807 0 960 0Zm223.797 707.147c-28.531-29.561-67.826-39.944-109.227-39.455-55.225.657-114.197 20.664-156.38 40.315-100.942 47.024-178.395 130.295-242.903 219.312-11.616 16.025-17.678 34.946 2.76 49.697 17.428 12.58 29.978 1.324 40.49-9.897l.69-.74c.801-.862 1.591-1.72 2.37-2.565 11.795-12.772 23.194-25.999 34.593-39.237l2.85-3.31 2.851-3.308c34.231-39.687 69.056-78.805 115.144-105.345 27.4-15.778 47.142 8.591 42.912 35.963-2.535 16.413-11.165 31.874-17.2 47.744-21.44 56.363-43.197 112.607-64.862 168.888-23.74 61.7-47.405 123.425-70.426 185.398l-2 5.38-1.998 5.375c-20.31 54.64-40.319 108.872-53.554 165.896-10.575 45.592-24.811 100.906-4.357 145.697 11.781 25.8 36.77 43.532 64.567 47.566 37.912 5.504 78.906 6.133 116.003-2.308 19.216-4.368 38.12-10.07 56.57-17.005 56.646-21.298 108.226-54.146 154.681-92.755 47.26-39.384 88.919-85.972 126.906-134.292 12.21-15.53 27.004-32.703 31.163-52.596 3.908-18.657-12.746-45.302-34.326-34.473-11.395 5.718-19.929 19.867-28.231 29.27-10.42 11.798-21.044 23.423-31.786 34.92-21.488 22.987-43.513 45.463-65.634 67.831-13.54 13.692-30.37 25.263-47.662 33.763-21.59 10.609-38.785-1.157-36.448-25.064 2.144-21.954 7.515-44.145 15.046-64.926 30.306-83.675 61.19-167.135 91.834-250.686 19.157-52.214 38.217-104.461 56.999-156.816 17.554-48.928 32.514-97.463 38.834-149.3 4.357-35.71-4.9-72.647-30.269-98.937Zm63.72-401.498c-91.342-35.538-200.232 25.112-218.574 121.757-13.25 69.784 13.336 131.23 67.998 157.155 105.765 50.16 232.284-29.954 232.29-147.084.005-64.997-28.612-111.165-81.715-131.828Z" fill-rule="evenodd" /></svg>
+              </div>
+
+              <!-- selectable box -->
+              <label class="option large-box green-hue">
+                <input type="checkbox" id="FOR_MIX" name="FOR_MIX" value="1">
+                <div class="highlight-container">
+                  <h1>MIXING</h1>
+                  <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
+                    <path d="M10 50 Q 250 0 490 50" fill="none" 
+                    stroke="green" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500" />
+                  </svg>
+                </div>
+                <img src="images/mixing-img.png" alt="Mixing" draggable="false">
+              </label>
+
             </div>
-            <img src="images/mixing-img.png" alt="Mixing" draggable="false">
-          </label>
-      
-          <label class="option large-box red-hue">
-            <input type="checkbox" id="FOR_MASTER" name="FOR_MASTER" value="1">
-            <div class="highlight-container">
-              <h1>MASTERING</h1>
-              <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
-                <path d="M10 50 Q 250 0 490 50" fill="none" stroke="red" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500"/>
-              </svg>
+
+            <!-- MASTERING -->
+            <div class="box-wrapper">
+
+              <!-- info -->
+              <div class="info-text red"
+                data-info="Mastering is the final touch that takes your track from a great song to a fully-fledged piece. It involves various measures to make your track sound professional and polished across all devices. This means everyone can enjoy your work the way you intended.">
+                MASTERING?
+                <svg fill="currentColor" width="800px" height="800px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg"><path d="M960 0c530.193 0 960 429.807 960 960s-429.807 960-960 960S0 1490.193 0 960 429.807 0 960 0Zm223.797 707.147c-28.531-29.561-67.826-39.944-109.227-39.455-55.225.657-114.197 20.664-156.38 40.315-100.942 47.024-178.395 130.295-242.903 219.312-11.616 16.025-17.678 34.946 2.76 49.697 17.428 12.58 29.978 1.324 40.49-9.897l.69-.74c.801-.862 1.591-1.72 2.37-2.565 11.795-12.772 23.194-25.999 34.593-39.237l2.85-3.31 2.851-3.308c34.231-39.687 69.056-78.805 115.144-105.345 27.4-15.778 47.142 8.591 42.912 35.963-2.535 16.413-11.165 31.874-17.2 47.744-21.44 56.363-43.197 112.607-64.862 168.888-23.74 61.7-47.405 123.425-70.426 185.398l-2 5.38-1.998 5.375c-20.31 54.64-40.319 108.872-53.554 165.896-10.575 45.592-24.811 100.906-4.357 145.697 11.781 25.8 36.77 43.532 64.567 47.566 37.912 5.504 78.906 6.133 116.003-2.308 19.216-4.368 38.12-10.07 56.57-17.005 56.646-21.298 108.226-54.146 154.681-92.755 47.26-39.384 88.919-85.972 126.906-134.292 12.21-15.53 27.004-32.703 31.163-52.596 3.908-18.657-12.746-45.302-34.326-34.473-11.395 5.718-19.929 19.867-28.231 29.27-10.42 11.798-21.044 23.423-31.786 34.92-21.488 22.987-43.513 45.463-65.634 67.831-13.54 13.692-30.37 25.263-47.662 33.763-21.59 10.609-38.785-1.157-36.448-25.064 2.144-21.954 7.515-44.145 15.046-64.926 30.306-83.675 61.19-167.135 91.834-250.686 19.157-52.214 38.217-104.461 56.999-156.816 17.554-48.928 32.514-97.463 38.834-149.3 4.357-35.71-4.9-72.647-30.269-98.937Zm63.72-401.498c-91.342-35.538-200.232 25.112-218.574 121.757-13.25 69.784 13.336 131.23 67.998 157.155 105.765 50.16 232.284-29.954 232.29-147.084.005-64.997-28.612-111.165-81.715-131.828Z" fill-rule="evenodd" /></svg>
+              </div>
+
+              <!-- selectable box -->
+              <label class="option large-box red-hue">
+                <input type="checkbox" id="FOR_MASTER" name="FOR_MASTER"
+                  value="1">
+                <div class="highlight-container">
+                  <h1>MASTERING</h1>
+                  <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
+                    <path d="M10 50 Q 250 0 490 50" fill="none" 
+                    stroke="red" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500" />
+                  </svg>
+                </div>
+                <img src="images/mastering-img.png" alt="Mastering"
+                  draggable="false">
+              </label>
+
             </div>
-            <img src="images/mastering-img.png" alt="Mastering" draggable="false">
-          </label>
+
+          </div>
+          <div class="bouncing-arrow"></div>
+
         </div>
 
-        <!-- Info Boxes -->
-        <div class="large-boxes">
-          <p class="info-text large-box" onclick="showInfo(this, 'recording')">Recording? <i class="fas fa-info-circle"></i></p>
-          <p class="info-text large-box" onclick="showInfo(this, 'mixing')">Mixing? <i class="fas fa-info-circle"></i></p>
-          <p class="info-text large-box" onclick="showInfo(this, 'mastering')">Mastering? <i class="fas fa-info-circle"></i></p>
-        </div>
-        <div id="info-popup" class="info-popup">
-          <div class="info-popup-content">
-            <span class="close" onclick="closeInfoPopup()">&times;</span>
-            <p id="info-text"></p>
+        <!-- Q2 - Booking For [FOR_SOLO,BAND,SW,OTHER] -->
+        <div class="question" id="q2">
+          <h2>I Am A: </h2>
+          <h3 class="nobreak">PLEASE SELECT ONE:</h3>
+        
+          <div class="large-boxes">
+            <!-- Solo Artist -->
+            <div class="box-wrapper">
+              <label class="option large-box" onclick="showSections('.artist'); changeLabelText('ARTIST NAME:')">
+                <input type="radio" id="FOR_SOLO" name="artist_type" value="SOLO" required>
+                <div class="highlight-container">
+                  <h1>SOLO ARTIST</h1>
+                  <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
+                    <path d="M10 50 Q 250 0 490 50" fill="none" 
+                    stroke="yellow" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500" />
+                  </svg>
+                </div>
+              </label>
+            </div>
+        
+            <!-- Band -->
+            <div class="box-wrapper">
+              <label class="option large-box" onclick="showSections('.band'); changeLabelText('BAND NAME:')">
+                <input type="radio" id="FOR_BAND" name="artist_type" value="BAND">
+                <div class="highlight-container">
+                  <h1>BAND</h1>
+                  <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
+                    <path d="M10 50 Q 250 0 490 50" fill="none" 
+                    stroke="yellow" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500" />
+                  </svg>
+                </div>
+              </label>
+            </div>
+        
+            <!-- Spoken Word Vocalist -->
+            <div class="box-wrapper">
+              <label class="option large-box" onclick="showSections('.spoken-word')">
+                <input type="radio" id="FOR_SW" name="artist_type" value="SPOKEN_WORD">
+                <div class="highlight-container">
+                  <h1>SPOKEN WORD VOCALIST</h1>
+                  <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
+                    <path d="M10 50 Q 250 0 490 50" fill="none" 
+                    stroke="yellow" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500" />
+                  </svg>
+                </div>
+              </label>
+            </div>
+        
+            <!-- Other -->
+            <div class="box-wrapper">
+              <label class="option large-box orange-hue" onclick="addOtherInput(event); showSections()">
+                <input type="radio" id="FOR_OTHER" name="artist_type" value="OTHER">
+                <div class="highlight-container">
+                  <h1>OTHER</h1>
+                  <svg class="highlight-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 100" preserveAspectRatio="none">
+                    <path d="M10 50 Q 250 0 490 50" fill="none" stroke="orange" stroke-width="80" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500"/>
+                  </svg>
+                </div>
+              </label>
+            </div>
           </div>
         </div>
 
+
+        <!-- Instruments Offered -->
+        <div class="question artist band recording">
+          <h2>Instruments Offered By 3507</h2>
+          <h3>Select Any You Wish To Use:</h3>
+          <div class="tick-boxes">
+            <label class="option btn-posnawr">
+              <input type="checkbox" id="electric-guitar" name="instrument"
+                value="electric-guitar">
+              <p>Electric Guitar</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr">
+              <input type="checkbox" id="acoustic-guitar" name="instrument"
+                value="acoustic-guitar">
+              <p>Acoustic Guitar</p>
+              <!-- <img src="svgs/acoustic-guitar.svg"/> -->
+              <span></span>
+            </label>
+            <label class="option btn-posnawr">
+              <input type="checkbox" id="bass" name="instrument" value="bass">
+              <p>Bass</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr">
+              <input type="checkbox" id="acoustic-piano" name="instrument"
+                value="acoustic-piano">
+              <p>Acoustic Piano</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr">
+              <input type="checkbox" id="amps" name="instrument" value="amps">
+              <p>Amps</p>
+              <span></span>
+            </label>
+          </div>
+        </div>
+        
+
+        <!-- Artist/Band Name [ARTIST_NAME] -->
+        <div class="form-item text-input artist band">
+          <label for="ARTIST_NAME"></label>
+          <input type="text" id="ARTIST_NAME" name="ARTIST_NAME">
+        </div>
+
+        <!-- I Want To Record [TYPE_SINGLE,MULTI,OTHER] -->
+        <div class="question recording">
+          <h2>I Want To Record: </h2>
+          <div class="tick-boxes">
+            <label class="option btn-posnawr artist band">
+              <input type="radio" id="TYPE_SINGLE" name="record_type"
+                value="1_SONG" required>
+              <p>A Song</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr artist band">
+              <input type="radio" id="TYPE_MULTI" name="record_type"
+                value="ALBUM_EP">
+              <p>Album / EP</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr spoken-word">
+              <input type="radio" id="TYPE_SW" name="record_type"
+                value="SPOKEN_WORD">
+              <p>Spoken Word</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr" onclick="addOtherInput(event)">
+              <input type="radio" id="TYPE_OTHER" name="record_type"
+                value="OTHER">
+              <p>Other</p>
+              <span></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Music Genre [GENRE]-->
+        <div class="question artist band">
+          <h2>Music Genre:</h2>
+          <div class="form-item">
+            <select id="GENRE" name="GENRE">
+              <option value disabled selected>SELECT GENRE</option>
+              <option value="Pop">Pop</option>
+              <option value="Rock">Rock</option>
+              <option value="Hip Hop">Hip Hop</option>
+              <option value="Jazz">Jazz</option>
+              <option value="Classical">Classical</option>
+              <option value="Blues">Blues</option>
+              <option value="Country">Country</option>
+              <option value="Electronic">Electronic</option>
+              <option value="Reggae">Reggae</option>
+              <option value="Funk">Funk</option>
+              <option value="Soul">Soul</option>
+              <option value="R&B">R&B</option>
+              <option value="Metal">Metal</option>
+              <option value="Punk">Punk</option>
+              <option value="Folk">Folk</option>
+              <option value="Techno">Techno</option>
+              <option value="House">House</option>
+              <option value="Latin">Latin</option>
+              <option value="Reggaeton">Reggaeton</option>
+              <option value="Dancehall">Dancehall</option>
+              <option value="K-Pop">K-Pop</option>
+              <option value="Indie">Indie</option>
+              <option value="Alternative">Alternative</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Session Musicians Needed -->
+        <div class="question artist band recording">
+          <h2>Extra Session Musicians Needed?</h2>
+          <div class="tick-boxes">
+            <label class="option btn-posnawr">
+              <input type="checkbox" id="drums" name="musician" value="drums">
+              <p>Drums</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr">
+              <input type="checkbox" id="bass-musician" name="musician"
+                value="bass">
+              <p>Bass</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr">
+              <input type="checkbox" id="keys" name="musician" value="keys">
+              <p>Keys</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr">
+              <input type="checkbox" id="vocalist" name="musician"
+                value="vocalist">
+              <p>Vocalist</p>
+              <span></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Equipment to Bring -->
+        <div class="question recording">
+          <h2>What equipment will you bring? This could be laptops,
+            instruments..</h2>
+          <div class="tick-boxes equipment">
+            <div class="form-item">
+              <input type="text" id="equipment1" name="equipment1"
+                placeholder="Item 1...">
+            </div>
+            <div class="form-item">
+              <input type="text" id="equipment2" name="equipment2"
+                placeholder="Item 2...">
+            </div>
+            <div class="form-item">
+              <input type="text" id="equipment3" name="equipment3"
+                placeholder="Item 3...">
+            </div>
+            <button type="button" class="add-item-button"
+              onclick="addNewInput()">+</button>
+          </div>
+        </div>
+
+        <!-- Session Timing -->
+        <div class="question">
+          <h2>How soon do you want to start?</h2>
+          <div class="tick-boxes">
+            <label class="option btn-posnawr">
+              <input type="radio" id="next-slot" name="session-timing"
+                value="next-slot" required>
+              <p>Next Slot!</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr">
+              <input type="radio" id="within-week" name="session-timing"
+                value="within-week">
+              <p>Within a week</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr">
+              <input type="radio" id="within-month" name="session-timing"
+                value="within-month">
+              <p>Within a month</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr" onclick="addOtherInput(event)">
+              <input type="radio" id="other" name="session-timing"
+                value="other">
+              <p>Other</p>
+              <span></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Session Goals -->
+        <div class="question artist band spoken-word">
+          <h2>What do you want to have achieved by the end of the session?</h2>
+          <div class="tick-boxes">
+            <label class="option btn-posnawr artist band">
+              <input type="radio" id="full-song" name="session-goal"
+                value="full-song" required>
+              <p>A full song</p>
+              <span></span>
+            </label>
+            <label class="option btn-posnawr spoken-word">
+              <input type="radio" id="full-song" name="session-goal"
+                value="full-song" required>
+              <p>A full recording</p>
+              <span></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Get Package Button -->
+        <button type="submit" class="access-button collision-btn"
+          id="get-package">
+          <img src="images/3507-logo.png" alt="Logo" />
+          <span>GET MY QUOTE</span>
+        </button>
+        <p id="selected-options"></p>
+
       </div>
-    </div>
 
-    
-    <!-- Right Banner -->
-    <img class="right-banner unselectable" src="images/right-banner.png">
-  </div>
-  
+      <!-- Right Banner -->
+      <img class="right-banner unselectable" src="images/right-banner.png">
+    </form>
 
-</body>
+  </body>
 </html>

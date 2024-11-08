@@ -54,14 +54,6 @@ function showNextQuestion(index, questions) {
   }, 300); // Delay before executing the logic
 }
 
-
-// Moves view to large boxes
-function scrollToView(boxes) {
-  if (boxes) {
-    // Scroll smoothly to the large boxes, aligning to the top
-    boxes.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-}
 // Selects
 function selectBoxes(ids) {
   const boxes = document.querySelector('.question.large-section .large-boxes');
@@ -220,45 +212,6 @@ function addNewInput() {
 }
 
 
-// When Info Clicked
-function showInfo(element, type) {
-  let infoText = '';
-  
-  // Predefine info text based on the type
-  switch(type) {
-    case 'recording':
-      infoText = 'Recording involves capturing your music in its rawest form, laying down each track with extreme precision. At 3507, you’ll have access to top-tier equipment and a creative environment that allows your music to impress, whether you’re a solo artist, band, or spoken word vocalist.';
-      break;
-    case 'mixing':
-      infoText = 'Mixing is where your track begins to take shape. All the individual elements are expertly blended to create a cohesive piece of music for you. This involves everything from adjusting levels, applying effects, and panning sounds to masterfully bring your piece to life.';
-      break;
-    case 'mastering':
-      infoText = 'Mastering is the final touch that takes your track from a great song to a fully-fledged piece. It involves various measures to make your track sound professional and polished across all devices. This means everyone can enjoy your work the way you intended.';
-      break;
-    default:
-      infoText = 'No information available.';
-  }
-  
-  // Update the info-text in the popup
-  const popup = document.getElementById('info-popup');
-  document.getElementById('info-text').innerText = infoText;
-  
-  // Get the position of the clicked element
-  const rect = element.getBoundingClientRect();
-  
-  // Use requestAnimationFrame for smoother style updates
-  requestAnimationFrame(() => {
-    popup.style.top = rect.bottom + window.scrollY + 16 + 'px';
-    popup.style.left = rect.left + 'px';
-    // Show the popup after positioning
-    popup.style.display = 'block';
-  });
-}
-function closeInfoPopup() {
-  document.getElementById('info-popup').style.display = 'none';
-}
-
-
 
 // CSS Variables
 // Gets CSS Variable
@@ -308,23 +261,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });  
-
-
-  // Closing Info Popup
-  // when clicking anywhere else
-  document.addEventListener('click', function(event) {
-    const popup = document.getElementById('info-popup');
-    const isClickInside = popup.contains(event.target) || event.target.classList.contains('info-text');
-    if (!isClickInside) {
-      closeInfoPopup();
-    }
-  });
-  // when pressing esc
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      closeInfoPopup();
-    }
-  });
 
 
   // Position Aware Button
